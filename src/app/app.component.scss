@@ -7,22 +7,23 @@ header{
 
 
 .content {
-	padding: 200px 0 100px 0;
+	// padding: 150px 0 100px 0;
 	width: 100%;
-	height: calc(100vh - 70px);
+	min-height: calc(100vh - 70px);
+  height: auto;
+	// .example-container {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	// height: 70%;
+	// 	min-width: 300px;
+  //   width: calc(100% - 150px);
+  //   margin-top: 150px;
+	//   }
 
-	.example-container {
-		display: flex;
-		flex-direction: column;
-		// height: 70%;
-		min-width: 300px;
-		width: calc(100% - 150px);
-	  }
-	  
-	  .mat-table {
-		overflow: auto;
-		max-height: 100%;
-		// width: 80%;
-	  }
-	  
+	//   .mat-table {
+	// 	overflow: auto;
+	// 	max-height: 100%;
+	// 	// width: 80%;
+	//   }
+
 }

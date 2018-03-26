@@ -1,0 +1,38 @@
+<div class="payment-container _layout-flex-col-center-center">
+    <div class="title">
+      <span>Liste des paiements: {{assoName.name}} : ({{totalPayement}})€</span>
+    </div>
+    <div class="example-container mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource">
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="date">
+            <mat-header-cell *matHeaderCellDef> DATE </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="amount">
+            <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.amount}}€ </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="payer_first_name">
+            <mat-header-cell *matHeaderCellDef> FIRSTNAME </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.payer_first_name}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator #paginator
+          (page)= "changePage($event)"
+          [pageSize]="defaultPageSize"
+          [length]="nbPayment"
+          [pageSizeOptions]="[5, 8, 100]"
+          [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+    </div>
